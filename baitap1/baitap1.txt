@@ -1,0 +1,50 @@
+
+package baitap1;
+import java.util.Scanner;
+
+public class Baitap1 {
+
+    
+    public static void main(String[] args) {
+      
+        Scanner sc = new Scanner(System.in); 
+       
+        System.out.print("Nhap thang: ");
+        int thang = sc.nextInt();
+        
+        System.out.print("Nhap ngay: ");
+        int ngay = sc.nextInt();
+        
+        int k=thang*100+ngay;
+        if((k>=120&&k<=131)||(k>=201&&k<218))
+        System.out.println("Cung Bao Binh");
+        if((k>=219&&k<=229)||(k>=301&&k<=320))
+        System.out.println("Cung Song Ngu");
+        if((k>=321&&k<=331)||(k>=401&&k<=420))
+        System.out.println("Cung Bach Duong");
+        if((k>=421&&k<=430)||(k>=501&&k<=520))
+        System.out.println("Cung Kim Nguu");
+        if((k>=521&&k<=531)||(k>=601&&k<=621))
+        System.out.println("Cung Song Tu");
+        if((k>=622&&k<=630)||(k>=701&&k<=722))
+        System.out.println("Cung Cu Giai");
+        if((k>=723&&k<=731)||(k>=801&&k<=822))
+        System.out.println("Cung Su Tu");
+        if((k>=823&&k<=831)||(k>=901&&k<=922))
+        System.out.println("Cung Xu Nu");
+        if((k>=923&&k<=930)||(k>=1001&&k<=1023))
+        System.out.println("Cung Thien Binh");
+        if((k>=1024&&k<=1031)||(k>=1101&&k<=1122))
+        System.out.println("Cung Bo Cap");
+        if((k>=1123&&k<=1130)||(k>=1201&&k<=1221))
+        System.out.println("Cung Nhan Ma");
+        if((k>=1222&&k<=1231)||(k>=101&&k<=119))
+        System.out.println("Cung Ma Ket");
+        else 
+            System.out.println("Nhap sai ngay thang");
+        
+        
+        
+    }
+    
+}
