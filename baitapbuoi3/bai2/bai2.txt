@@ -1,0 +1,58 @@
+
+package baitapbuoi2_1;
+
+import java.util.Scanner;
+import java.lang.String;
+
+public class Baitapbuoi2_1 {
+
+    
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Nhap chuoi: ");
+        String a = sc.nextLine();
+        System.out.println("Chuoi da nhap: "+a);
+          
+        int n=a.length();
+        chuanhoa(a);
+        xoaso(a,n);
+        String h=chuanhoadtrieng(a);
+        System.out.println("Chuoi chuan hoa: "+h);
+    }
+    public static String chuanhoa(String a)
+    {
+        a=a.trim();      
+        a=a.replaceAll("\\s+", " ");
+        return a;
+    }
+    public static String chuanhoadtrieng(String a)
+    {
+        String temp[] = a.split(" ");
+	    a = "";
+	    for(int i =0;i< temp.length;i++)
+		{
+	    	String k = temp[i].substring(0, 1).toUpperCase();
+	    	a += k + temp[i].substring(1).toLowerCase() + " ";
+		}
+        return a;
+    }
+    public static String xoaso(String a,int n)
+    {
+       
+        for(int i = 0 ; i <n ; i++){
+            if
+            (
+                '0' == a.charAt(i) || '1' == a.charAt(i)|| '2' == a.charAt(i) || '3' == a.charAt(i)|| '4' == a.charAt(i)
+                || '5' == a.charAt(i) || '6' == a.charAt(i)|| '7' == a.charAt(i)|| '8' == a.charAt(i)|| '9' == a.charAt(i)
+            ){
+                a = removeCharAt(a,i);
+                i--;
+                n--;
+            }
+        }
+        return a;
+    }
+    
+    
+}

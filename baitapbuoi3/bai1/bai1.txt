@@ -1,0 +1,134 @@
+
+package baitapbuoi2;
+
+import java.util.Scanner;
+
+public class Baitapbuoi2 {
+
+    public static void main(String[] args) {
+       
+        Scanner sc= new Scanner(System.in);
+        int n;
+        System.out.print("Nhap so ki tu n = ");
+        n=sc.nextInt();
+        int a[] = new int[n];
+        nhapmang(a,n);
+        float tbc = tbc(a,n);
+        System.out.println("Trung binh cong cac so le o vi tri chan la: " + tbc);
+               
+        vitri(a,n);
+        
+        System.out.print("So chinh phuong: ");
+        int h=0;
+        for(int i=0;i<n;i++)
+        {
+            if(socp(a[i])==true){
+              System.out.print(a[i]+",");
+              h++;
+            }
+            i++;
+        }  
+        if (h==0)
+           System.out.println("khong co so chinh phuong");
+        
+        System.out.print("So nguyen to: ");
+        int z=0;
+        for(int i=0;i<n;i++)
+        {
+            if(snt(a[i])==true){
+                System.out.print(a[i]+", ");
+                z++;
+            }
+        }
+        if(z==0)
+            System.out.println("khong co so nguyen to");
+        sapxep(a,n);
+                  
+    }
+    public static void nhapmang(int a[],int n)
+    { 
+        Scanner sc= new Scanner(System.in);
+        for(int i=0;i<n;i++)
+        {
+            System.out.printf("a[%d] = ",i);
+            a[i]=sc.nextInt(); 
+        }
+        
+    }
+    public static float tbc(int a[],int n)
+    {
+        int tong=0;
+        int dem=0;
+        for(int i=1;i<n;i++)
+        {
+            if(a[i]%2==1 && (i%2==0))  
+            {
+                    dem++;
+                    tong=tong+a[i];
+            }
+           
+        }
+        float m = tong/dem;
+        return m; 
+    }
+    public static void vitri(int a[],int n)
+    {
+        int min=a[0];
+        for(int i=1;i<n;i++)
+        {
+            if(min>a[i])
+                min=a[i];
+        }
+        System.out.print("Vi tri cac so nho nhat la: ");
+        for (int i=0;i<n;i++)
+        {
+            if(min==a[i])
+                System.out.print((i)+", ");  
+        }
+    }
+    public static Boolean socp(int k)
+    {
+        int i=0;
+        while(i*i<=k)
+        {
+            if(i*i==k)
+            {
+                return true;            
+            }
+            i++;           
+        }  
+        return false;
+    }
+    public static Boolean snt(int l) 
+    {
+        if(l==2)
+            return true;
+        if(l>2)
+            for(int i=2;i<l;i++)
+            {
+                if(l%i==0)
+                    return false;
+                else return true;
+            } 
+        return false;
+               
+    }
+    public static void sapxep(int a[],int n)
+    {
+        System.out.print("Mang sap xep theo thu tu tang dan la: ");
+        int temp;
+        for(int i=0;i<n-1;i++){
+            for(int j=i+1;j<n;j++)
+        {
+            if(a[i]>a[j])
+            {
+                temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+            }
+        }
+        }
+        for(int item:a)
+            System.out.print(item+" ");
+    }
+}
