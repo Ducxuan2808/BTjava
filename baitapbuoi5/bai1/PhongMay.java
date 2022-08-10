@@ -67,10 +67,6 @@ public class PhongMay {
     public void output() {
         System.out.printf("%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s\n", "Ma Phong ", "TenPhong ", "DienTich ", "MaQuanLy ", "HovaTen ", "MaMay ", "KieuMay ", "TinhTrang ");
         System.out.printf("%-10d%-10s%-10f%-10d%-10s%-10d%-10s%-10s", maPhong, tenPhong, DienTich, x.getMaQL(), x.getHoTen(), y.getMaMay(), y.getKieuMay(), y.getTinhTrang());
-//         System.out.println("Ma Phong: "+maPhong);
-//         System.out.println("Ten Phong: "+tenPhong);
-//         System.out.println("Dien Tich: "+DienTich); 
-
     }
 
     public static void main(String[] args) {
